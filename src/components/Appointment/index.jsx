@@ -30,7 +30,7 @@ export default function Appointment(props) {
             interviewer={props.interview.interviewer}
           />
         )}
-        {mode === CREATE && <Form name="Archie Cohen" interviewers={props.interviewers}
+        {mode === CREATE && <Form name={props.name} interviewers={props.interviewers}
     interviewer={3} onSave={() => console.log("onSave") } onCancel={() => back()}/>}
     </article>
   );
