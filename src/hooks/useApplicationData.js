@@ -8,7 +8,24 @@ export default function useApplicationData() {
     appointments: {},
     interviewers: {}
   });
-  
+
+  //the function recalculate the remaining spots for the day and returns updated days array
+  const spotsRemaining = function (days,day,appointments) {
+    
+    const dayObj = days.find(d => d.name === day);
+    
+    const currentSpots = dayObj.appointments.filter(id => !appointments[id].interview).length;
+    const currentDay = {...dayObj, spots: currentSpots};
+    
+    const daysArr = days.map(day => {
+      if (day.id === currentDay.id) {
+        return day = {...currentDay};
+      }
+      return day;
+    })
+    return daysArr;
+
+  };
 
   const setDay = day => setState({ ...state, day });
 
@@ -22,9 +39,10 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     };
-    //setState({...state, appointments});
+    const days = spotsRemaining(state.days, state.day, appointments);
+    
     return axios.put(`/api/appointments/${id}`, appointment)
-            .then((res) => setState(state => ({ ...state, appointments })));
+            .then((res) => setState(state => ({ ...state, appointments, days })));
   };
   
   function cancelInterview(id) {
@@ -36,8 +54,10 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     };
+    
+    const days = spotsRemaining(state.days, state.day,appointments);
     return axios.delete(`/api/appointments/${id}`, appointment)
-            .then(() => setState(state => ({ ...state, appointments })));
+            .then(() => setState(state => ({ ...state, appointments,days })));
   };
   useEffect(() => {
     
