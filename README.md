@@ -28,3 +28,13 @@ npm test
 ```sh
 npm run storybook
 ```
+## Dependencies
+
+- axios
+- classnames
+- normalize.css
+- react ^16.9.0
+- react-dom ^16.9.0
+- react-scripts
+- jest
+- cypress
