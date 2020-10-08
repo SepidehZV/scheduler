@@ -3,9 +3,9 @@ Scheduler is a single-page application built with React that allows users to boo
 
 ## Screen Shots
 
-!["Screenshot of Display Appointments"]()
-!["Screenshot of Edit Appointment Form"]()
-!["Screenshot of Delete Appointment"]()
+!["Screenshot of Display Appointments"](https://github.com/SepidehZV/scheduler/blob/master/docs/Scheduler-Display-Appointments.jpeg?raw=true)
+!["Screenshot of Edit Appointment Form"](https://github.com/SepidehZV/scheduler/blob/master/docs/Scheduler-Edit-Appointments.jpeg?raw=true)
+!["Screenshot of Delete Appointment"](https://github.com/SepidehZV/scheduler/blob/master/docs/Scheduler-Delete-Appointments.jpeg?raw=true)
 
 ## Setup
 
