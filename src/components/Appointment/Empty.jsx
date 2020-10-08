@@ -1,5 +1,5 @@
 import React from 'react';
-
+// this component is shown when there is no interview booked
 export default function Empty(props) {
 
   return (

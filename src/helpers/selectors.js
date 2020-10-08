@@ -8,16 +8,15 @@ export function getAppointmentsForDay(state, day) {
     return [];
   }
   const AppointmentsID = selectedDay.appointments;
-  const appointmentsList = AppointmentsID.map(app => state.appointments[app.toString()]);
+  const appointmentsList = AppointmentsID.map(app => state.appointments[app]);
   return appointmentsList;
 };
 
 export function getInterview(state, interview) {
 
   if (interview) {
-    const interviewer = {...state.interviewers[interview.interviewer.toString()]};
-    //console.log({student: interview.student , interviewer});
-    //console.log(interview);
+    const interviewer = {...state.interviewers[interview.interviewer]};
+    
     return {student: interview.student , interviewer};
   }
   return null;
@@ -29,6 +28,6 @@ export function getInterviewersForDay(state,day) {
     return [];
   }
   const interviewersID = selectedDay.interviewers;
-  const interviewersList = interviewersID.map(id => state.interviewers[id.toString()]);
+  const interviewersList = interviewersID.map(id => state.interviewers[id]);
   return interviewersList;
 }

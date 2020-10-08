@@ -29,6 +29,7 @@ describe("Application", () => {
   
     expect(getByText("Leopold Silvers")).toBeInTheDocument();
   });
+
   it("loads data, books an interview and reduces the spots remaining for the first day by 1", async () => {
     const { container } = render(<Application />);
 
@@ -54,7 +55,7 @@ describe("Application", () => {
     );
     
     expect(getByText(day,/no spots remaining/i)).toBeInTheDocument();
-  }) 
+  });
 
   it("loads data, cancels an interview and increases the spots remaining for Monday by 1", async () => {
     const { container,debug } = render(<Application />);
@@ -165,5 +166,5 @@ describe("Application", () => {
     
   });
 
-})
+});
 

@@ -1,5 +1,5 @@
 import React from 'react';
-
+//this component is shown when there is an error in deleting or saving an interview.
 export default function Error(props) {
 
   return (
